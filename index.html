@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<link rel="stylesheet" href="vendors/famous-angular/dist/famous-angular.css">
+	
+		<script src="vendors/angular/angular.js"></script>
+		<script src="vendors/famous/dist/famous-global.js"></script>
+		<script src="vendors/famous-angular/dist/famous-angular.js"></script>
+	</head>
+	<body ng-app="helloFamous">
+	
+		<div ng-controller="homeController">
+		
+			<fa-app>
+				<fa-view>
+					<fa-modifier fa-background-color="green" id="hello">
+						<fa-surface fa-size="[250,50]">
+							<span fa-click="go()">
+								<input type="text">
+							</span>
+						</fa-surface>
+					</fa-modifier>
+					
+					<fa-animation id="shake-hello">
+						<animate  targetModSelector="#hello"
+								 field="translate"
+								 startValue="[0,0,0]"
+								 endValue="[-40,0,0]"
+								 curve="linear"
+								 timelineLowerBound="0"
+								 timelineUpperBound=".075"/>
+						<animate  targetModSelector="#hello"
+								 field="translate"
+								 startValue="[0,0,0]"
+								 endValue="[30,0,0]"
+								 curve="linear"
+								 timelineLowerBound=".075"
+								 timelineUpperBound=".15"/>
+						<animate  targetModSelector="#hello"
+								 field="translate"
+								 startValue="[40,0,0]"
+								 endValue="[0,0,0]"
+								 curve="outElastic"
+								 timelineLowerBound=".15"
+								 timelineUpperBound="1"/>
+							
+					</fa-animation>
+					
+				</fa-view>
+			</fa-app>
+		</div>
+		
+		
+		<script src="js/app.js"></script>
+	</body>
+</html>
